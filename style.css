@@ -56,7 +56,12 @@ button:hover {
 }
 
 .checked {
-  color: red;
+  color: darkred;
+  text-decoration: line-through;
+}
+
+.secondblock {
+  margin-top: 3px;
 }
 
 .todo-block-task {
