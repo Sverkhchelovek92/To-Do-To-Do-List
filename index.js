@@ -8,16 +8,12 @@ const addIcon = `<img src="plus.svg" width="21">`;
 
 // Local Storage
 
-let todosList;
+// let todosList;
 
-const saveToLocal = () => {
-  todosList = todoBlocks.innerHTML;
-  localStorage.setItem("todos", todosList);
-};
-
-if (localStorage.getItem("todos")) {
-  todoBlocks.innerHTML = localStorage.getItem("todos");
-}
+// const saveToLocal = () => {
+//   todosList = todoBlocks.innerHTML;
+//   localStorage.setItem("todos", todosList);
+// };
 
 const btnClick = () => {
   console.log("click");
@@ -84,7 +80,7 @@ const btnClick = () => {
 
   addInput.value = "";
 
-  saveToLocal();
+  // saveToLocal();
 
   const blockBtnClick = () => {
     // Получаем значение из формы внутри блока
@@ -125,13 +121,13 @@ const btnClick = () => {
 
     addInputBlock.value = "";
 
-    saveToLocal();
+    // saveToLocal();
 
     // Вешаем событие на кнопку delete
 
     deleteBtn.addEventListener("click", () => {
       secondBlock.removeChild(todoBlockBlock);
-      saveToLocal();
+      // saveToLocal();
     });
 
     // Вешаем событие на кнопку check
@@ -139,21 +135,25 @@ const btnClick = () => {
     checkBtn.addEventListener("click", () => {
       if (todoBlockBlock.classList.contains("checked")) {
         todoBlockBlock.classList.remove("checked");
-        saveToLocal();
+        // saveToLocal();
       } else {
         todoBlockBlock.classList.add("checked");
-        saveToLocal();
+        // saveToLocal();
       }
     });
   };
 
   addBlockBtn.addEventListener("click", () => {
     blockBtnClick();
-    saveToLocal();
+    // saveToLocal();
   });
 };
 
 addBtn.addEventListener("click", () => {
   btnClick();
-  saveToLocal();
+  // saveToLocal();
 });
+
+// if (localStorage.getItem("todos")) {
+//   todoBlocks.innerHTML = localStorage.getItem("todos");
+// }
